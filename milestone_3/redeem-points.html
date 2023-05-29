@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redeem Points</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f7f7f7;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .reward-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .reward-item {
+      background-color: #333;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .reward-name {
+      font-weight: bold;
+    }
+
+    .reward-points {
+      font-weight: bold;
+      color: #2ecc71;
+    }
+
+    .reward-description {
+      margin-top: 5px;
+    }
+
+    .redeem-button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .h1{
+        color: #007bff;
+    }
+  </style>
+  <script>
+    // Sample rewards data
+    var rewards = [
+      { name: 'Gift Card', points: 500, description: 'Redeem for a $10 gift card' },
+      { name: 'Movie Ticket', points: 300, description: 'Redeem for a movie ticket' },
+      { name: 'Discount Coupon', points: 200, description: 'Redeem for a 20% discount coupon' },
+    ];
+
+    function displayRewards() {
+      var rewardList = document.getElementById('reward-list');
+      rewards.forEach(function(reward) {
+        var listItem = document.createElement('li');
+        listItem.className = 'reward-item';
+
+        var nameElement = document.createElement('div');
+        nameElement.className = 'reward-name';
+        nameElement.textContent = reward.name;
+
+        var pointsElement = document.createElement('div');
+        pointsElement.className = 'reward-points';
+        pointsElement.textContent = reward.points + ' Points';
+
+        var descriptionElement = document.createElement('div');
+        descriptionElement.className = 'reward-description';
+        descriptionElement.textContent = reward.description;
+
+        var redeemButton = document.createElement('button');
+        redeemButton.className = 'redeem-button';
+        redeemButton.textContent = 'Redeem';
+        redeemButton.addEventListener('click', function() {
+          redeemReward(reward);
+        });
+
+        listItem.appendChild(nameElement);
+        listItem.appendChild(pointsElement);
+        listItem.appendChild(descriptionElement);
+        listItem.appendChild(redeemButton);
+
+        rewardList.appendChild(listItem);
+      });
+    }
+
+    function redeemReward(reward) {
+      // Placeholder function for redeeming the reward
+      alert('Redeeming ' + reward.name + ' with ' + reward.points + ' points');
+    }
+
+    window.onload = function() {
+      displayRewards();
+    };
+  </script>
+</head>
+<body>
+  <h1 class="h1">Redeem Points</h1>
+  <ul id="reward-list" class="reward-list"></ul>
+</body>
+</html>

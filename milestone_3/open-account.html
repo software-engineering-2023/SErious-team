@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Open New Account</title>
+        <style>
+       body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #2196f3;
+  padding: 20px;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+header {
+  color: #2196f3;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #2196f3;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: inline-block;
+  width: 120px;
+  text-align: left;
+  font-weight: bold;
+  color: #2196f3;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.form-group select {
+  border-color: #2196f3;
+}
+
+.form-group button {
+  display: block;
+  margin: 0 auto; /* Center-align the button */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #0d47a1;
+}
+          </style>
+        
+    </head>
+    <body>
+    <br>
+    <br>
+    <form>
+        <div class="container"> 
+            
+            <header style=" color: #2196f3; padding: 30px; display: flex; justify-content: center; align-items: center;"> 
+                <h1>Open Account</h1> </header>
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                      <option value="">Select gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="account-type">Account Type:</label>
+                    <select id="account-type" name="account-type" required>
+                      <option value="">Select account type</option>
+                      <option value="savings">Savings</option>
+                      <option value="current">Current</option>
+                      <option value="business">Business</option>
+                    </select>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" required></textarea>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="job">Job:</label>
+                    <input type="text" id="job" name="job" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="salary">Salary:</label>
+                    <input type="text" id="salary" name="salary" required>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit">Register</button>
+                  </div>
+                  <button type="submit" onclick="window.location.href='ClientDashBoard.html';">Back</button>
+                </form>
+                
+              </div>
+</html>

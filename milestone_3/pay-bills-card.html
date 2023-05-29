@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pay Bills with Credit Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f7f7f7;
+    }
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: inline-block;
+  width: 120px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.h1{
+    color:#007bff;
+}
+</style>
+  <script>
+    function payBills() {
+      var creditCardNumber = document.getElementById("credit-card-number").value;
+      var amount = document.getElementById("amount").value;
+      var billDetails = document.getElementById("bill-details").value;
+
+      if (creditCardNumber === "" || amount === "" || billDetails === "") {
+    alert("Please provide all the required information.");
+    return;
+     }
+     alert("paid successfully!");
+   
+  
+
+  alert("Bills paid successfully!");{
+  resetForm();
+}
+    }
+
+function resetForm() {
+  document.getElementById("credit-card-number").value = "";
+  document.getElementById("amount").value = "";
+  document.getElementById("bill-details").value = "";
+}
+</script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="h1">Pay Bills with Credit Card</h1>
+    <form>
+      <div class="form-group">
+        <label for="credit-card-number">Credit Card Number:</label>
+        <input type="text" id="credit-card-number" name="credit-card-number" required>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="bill-details">Bill Details:</label>
+        <textarea id="bill-details" name="bill-details" required></textarea>
+      </div>
+    
+      <div class="form-group">
+        <button type="button" onclick="payBills()">Pay Bills</button>
+      </div>
+    </form>
+</div>
+</body>
+</html>

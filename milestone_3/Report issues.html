@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theft Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f7f7f7;
+    }
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: inline-block;
+      width: 120px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function reportTheft() {
+      var theftType = document.getElementById("theft-type").value;
+      var date = document.getElementById("date").value;
+      var location = document.getElementById("location").value;
+      var description = document.getElementById("description").value;
+
+      if (theftType === "" || date === "" || location === "" || description === "") {
+        alert("Please provide all the required information.");
+        return;
+      }
+
+      alert("Theft reported successfully!");
+      resetForm();
+    }
+
+    function resetForm() {
+      document.getElementById("theft-type").value = "";
+      document.getElementById("date").value = "";
+      document.getElementById("location").value = "";
+      document.getElementById("description").value = "";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Theft Management</h1>
+    <form>
+      <div class="form-group">
+        <label for="theft-type">Theft Type:</label>
+        <input type="text" id="theft-type" name="theft-type" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+      </div>
+    
+      <div class="form-group">
+        <button type="button" onclick="reportTheft()">Report Theft</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

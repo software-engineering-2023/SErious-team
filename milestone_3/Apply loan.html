@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apply for Loan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f7f7f7;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: inline-block;
+      width: 120px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #0d47a1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function applyLoan() {
+      var loanForm = document.getElementById("loan-form");
+      loanForm.style.display = 'block';
+    }
+
+    function submitLoanForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var amount = document.getElementById("loan-amount").value;
+      var purpose = document.getElementById("loan-purpose").value;
+
+      if (name === "" || email === "" || amount === "" || purpose === "") {
+        alert("Please provide all the required information.");
+        return;
+      }
+
+      alert("Loan application submitted successfully!");
+      resetLoanForm();
+      var loanForm = document.getElementById("loan-form");
+      loanForm.style.display = 'none';
+    }
+
+    function resetLoanForm() {
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("loan-amount").value = "";
+      document.getElementById("loan-purpose").value = "";
+    }
+  </script>
+</head>
+<body>
+
+  <div class="form-group">
+    <h2>Loan Application</h2>
+    <form onsubmit="event.preventDefault(); submitLoanForm();">
+      <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </p>
+      <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </p>
+      <p>
+        <label for="loan-amount">Loan Amount:</label>
+        <input type="number" id="loan-amount" name="loan-amount" required>
+      </p>
+      <p>
+        <label for="loan-purpose">Loan Purpose:</label>
+        <textarea id="loan-purpose" name="loan-purpose" required></textarea>
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

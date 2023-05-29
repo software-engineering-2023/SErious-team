@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Details</title>
+  <style>
+    /* CSS styles for the account details layout */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .account-details {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .account-details h2 {
+      margin-top: 0;
+    }
+
+    .account-details p {
+      margin-bottom: 20px;
+    }
+
+    .account-details button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .transaction-details {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .transaction-details h2 {
+      margin-top: 0;
+    }
+
+    .transaction-details p {
+      margin-bottom: 20px;
+    }
+    .Make-deposit {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .Make-deposit h2 {
+      margin-top: 0;
+    }
+
+    .Make-deposit p {
+      margin-bottom: 20px;
+    }
+  </style>
+   <script>
+    function viewTransactions() {
+        var transactionDetails = document.querySelector('.transaction-details');
+      transactionDetails.style.display = 'block';
+    }
+    function Makedeposit() {
+        var deposit= document.querySelector('.Make-deposit');
+      deposit.style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <div class="account-details">
+    <h2>Account Details</h2>
+    <p>Account Number: XXXXXXXX</p>
+    <p>Balance: $XXXX.XX</p>
+    <p>Account Type: Savings Account</p>
+
+    <button onclick="viewTransactions()">View Transactions</button>
+ 
+  </div>
+  <div class="transaction-details" id="transactionDetails">
+    <h2>Transaction Details</h2>
+    <p>Transaction ID: XXXXXXXX</p>
+    <p>Date: XXXX-XX-XX</p>
+    <p>Amount: $XXXX.XX</p>
+    <p>Description: The customer is very important, the customer will be followed by the customer..</p>
+  </div>
+  <script>
+    var transactionDetails = document.getElementById("transactionDetails");
+    transactionDetails.style.display = 'none';
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Renew Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f7f7f7;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: inline-block;
+      width: 120px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .back-button {
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function renewCard() {
+      var cardNumber = document.getElementById('card-number').value;
+      var expirationDate = document.getElementById('expiration-date').value;
+
+      if (cardNumber === '' || expirationDate === '') {
+        alert('Please provide all the required information.');
+        return;
+      }
+
+      alert('Card renewal submitted successfully!');
+      resetForm();
+    }
+
+    function resetForm() {
+      document.getElementById('card-number').value = '';
+      document.getElementById('expiration-date').value = '';
+    }
+  </script>
+</head>
+<body>
+  <h1>Renew Card</h1>
+  <form>
+    <div class="form-group">
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" name="card-number" required>
+    </div>
+    <div class="form-group">
+      <label for="expiration-date">Expiration Date:</label>
+      <input type="text" id="expiration-date" name="expiration-date" required>
+    </div>
+    <div class="form-group">
+      <button type="button" onclick="renewCard()">Renew Card</button>
+    </div>
+    <div class="back-button">
+        <button type="button" onclick="goBack()">Back</button>
+      </div>
+  </form>
+</body>
+</html>

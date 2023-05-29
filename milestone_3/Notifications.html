@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notifications</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #f7f7f7;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #0d47a1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .notification {
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .notification.success {
+    background-color: #2ecc71;
+  }
+
+  .notification.error {
+    background-color: #e74c3c;
+  }
+
+  .notification.info {
+    background-color: #3498db;
+  }
+
+  .reminder {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .reminder-time {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .reminder-message {
+    white-space: pre-line;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  form {
+    margin-top: 10px;
+  }
+
+  label {
+    display: inline-block;
+    width: 80px;
+  }
+
+  input[type="text"],
+  input[type="submit"] {
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  input[type="submit"] {
+    background-color: #0d47a1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  </style>
+  <script>
+    function createNotification(type, message) {
+      var notification = document.createElement("div");
+      notification.className = "notification " + type;
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      setTimeout(function() {
+        document.body.removeChild(notification);
+      }, 3000);
+    }
+
+    function showLoanApproval() {
+      var loanType = "Home Loan";
+      var loanAmount = "$200,000";
+      var message = "Congratulations! Your " + loanType + " application has been approved for an amount of " + loanAmount + ".";
+      createNotification("success", message);
+    }
+
+    function showBankAnnouncement() {
+      var announcementTitle = "New Branch Opening";
+      var announcementContent = "We are excited to announce the opening of our new branch in downtown. Visit us for exclusive offers!";
+      var message = "📢 " + announcementTitle + " 📢\n\n" + announcementContent;
+      createNotification("info", message);
+    }
+
+    function createReminder(time, message) {
+      var reminder = document.createElement("div");
+      reminder.className = "reminder";
+      reminder.innerHTML = "<div class='reminder-time'>" + time + "</div><div class='reminder-message'>" + message + "</div>";
+      document.getElementById("reminders-container").appendChild(reminder);
+      showNotification(time, message); // Show the notification when creating the reminder
+    }
+
+    function setReminder() {
+      var timeInput = document.getElementById("time");
+      var messageInput = document.getElementById("message");
+
+      var time = timeInput.value;
+      var message = messageInput.value;
+
+      if (time === "" || message === "") {
+        alert("Please provide all the required information.");
+        return;
+      }
+
+      createReminder(time, message);
+
+      timeInput.value = "";
+      messageInput.value = "";
+    }
+
+    function showNotification(time, message) {
+      if (Notification.permission === "granted") {
+        var notification = new Notification("Reminder", {
+          body: message,
+          icon: "notification-icon.png"
+        });
+      } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(function (permission) {
+          if (permission === "granted") {
+            var notification = new Notification("Reminder", {
+              body: message,
+              icon: "notification-icon.png"
+            });
+          }
+        });
+      }
+    }
+    function handleIssue() {
+      var issueType = "Payment Error";
+      var issueMessage = "There was an error processing your payment. Please contact our support team for assistance.";
+      var message = "⚠️ " + issueType + " ⚠️\n\n" + issueMessage;
+      createNotification("error", message);
+    }
+
+    function approveNewCard() {
+      var cardType = "Visa";
+      var cardNumber = "**** **** **** 1234";
+      var message = "✅ Your new " + cardType + " card ending in " + cardNumber + " has been approved. It will be delivered to your registered address soon.";
+      createNotification("success", message);
+    }
+ 
+  </script>
+</head>
+<body>
+    <h1>Bank Notifications</h1>
+    <button onclick="showLoanApproval()">Show Loan Approval</button>
+    <button onclick="showBankAnnouncement()">Show Bank Announcement</button>
+    <button onclick="handleIssue()">Handle Issue</button>
+    <button onclick="approveNewCard()">Approve New Card</button>
+  
+    <h1>Reminders</h1>
+    <div id="reminders-container"></div>
+  
+    <h2>Create Reminder</h2>
+    <form onsubmit="event.preventDefault(); setReminder();">
+      <p>
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" required>
+      </p>
+      <p>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" required>
+      </p>
+      <button type="submit">Set Reminder</button>
+    </form>
+  </form>
+</body>
+</html>

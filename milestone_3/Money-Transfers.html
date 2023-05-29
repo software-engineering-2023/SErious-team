@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Money Transfers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f7f7f7;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: inline-block;
+      width: 120px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #0d47a1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function Makedeposit() {
+      var deposit = document.getElementById("deposit");
+      deposit.style.display = 'block';
+      document.getElementById("bill").style.display = 'none';
+      document.getElementById("transfer").style.display = 'none';
+    }
+
+    function payBill() {
+      var bill = document.getElementById("bill");
+      bill.style.display = 'block';
+      document.getElementById("deposit").style.display = 'none';
+      document.getElementById("transfer").style.display = 'none';
+    }
+
+    function transferFunds() {
+      var transfer = document.getElementById("transfer");
+      transfer.style.display = 'block';
+      document.getElementById("deposit").style.display = 'none';
+      document.getElementById("bill").style.display = 'none';
+    }
+
+    function submitDepositForm() {
+      var amount = document.getElementById("amount").value;
+      var account = document.getElementById("account").value;
+
+      if (amount === "" || account === "") {
+        alert("Please provide all the required information.");
+        return;
+      }
+
+      alert("Deposit submitted successfully!");
+      document.getElementById("amount").value = "";
+      document.getElementById("account").value = "";
+      var deposit = document.getElementById("deposit");
+      deposit.style.display = 'none';
+    }
+
+    function submitBillPaymentForm() {
+      var billType = document.getElementById("bill-type").value;
+      var billAmount = document.getElementById("bill-amount").value;
+      var accountNumber = document.getElementById("account-number").value;
+
+      if (billType === "" || billAmount === "" || accountNumber === "") {
+        alert("Please provide all the required information.");
+        return;
+      }
+
+      alert("Bill paid!");
+      document.getElementById("bill-type").value = "";
+      document.getElementById("bill-amount").value = "";
+      document.getElementById("account-number").value = "";
+    }
+
+    function submitTransferForm() {
+      var fromAccount = document.getElementById("from-account").value;
+      var toAccount = document.getElementById("to-account").value;
+      var amount = document.getElementById("transfer-amount").value;
+
+      if (fromAccount === "" || toAccount === "" || amount === "") {
+        alert("Please provide all the required information.");
+        return;
+      }
+
+      alert("Transfer successful! Funds transferred from Account " + fromAccount + " to Account " + toAccount + " in the amount of $" + amount);
+      document.getElementById("from-account").value = "";
+      document.getElementById("to-account").value = "";
+      document.getElementById("transfer-amount").value = "";
+    }
+  </script>
+</head>
+<body>
+  <button onclick="Makedeposit()">Make a Deposit</button>
+  <button onclick="payBill()">Pay Bill</button>
+  <button onclick="transferFunds()">Transfer Funds</button>
+
+  <div class="form-group" id="deposit" style="display: none;">
+    <h2>Make a Deposit</h2>
+    <form onsubmit="event.preventDefault(); submitDepositForm();">
+      <p>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+      </p>
+      <p>
+        <label for="account">Account Number:</label>
+        <input type="text" id="account" name="account" required>
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="form-group" id="bill" style="display: none;">
+    <h2>Bill Payment</h2>
+    <form onsubmit="event.preventDefault(); submitBillPaymentForm();">
+      <p>
+        <label for="bill-type">Bill Type:</label>
+        <input type="text" id="bill-type" name="bill-type" required>
+        <p>
+          <label for="bill-type">Bill Type:</label>
+          <select id="bill-type" name="bill-type" required>
+            <option value="gas">Gas</option>
+            <option value="electricity">Electricity</option>
+            <option value="water">Water</option>
+            <option value="telephone">Telephone</option>
+            <option value="cardBill">Card Bill</option>
+
+          </select>
+        </p>
+          
+      </p>
+      <p>
+        <label for="bill-amount">Bill Amount:</label>
+        <input type="number" id="bill-amount" name="bill-amount" required>
+      </p>
+      <p>
+        <label for="account-number">Account Number:</label>
+        <input type="text" id="account-number" name="account-number" required>
+      </p>
+      <button type="submit">Pay Bill</button>
+    </form>
+  </div>
+
+  <div class="form-group" id="transfer" style="display: none;">
+    <h2>Transfer Funds</h2>
+    <form onsubmit="event.preventDefault(); submitTransferForm();">
+      <p>
+        <label for="from-account">From Account:</label>
+        <input type="text" id="from-account" name="from-account" required>
+      </p>
+      <p>
+        <label for="to-account">To Account:</label>
+        <input type="text" id="to-account" name="to-account" required>
+      </p>
+      <p>
+        <label for="transfer-amount">Amount:</label>
+        <input type="number" id="transfer-amount" name="transfer-amount" required>
+      </p>
+      <button type="submit">Transfer</button>
+    </form>
+  </div>
+</body>
+</html>

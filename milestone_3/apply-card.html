@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apply for Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #2196f3;
+      padding: 20px;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: inline-block;
+      width: 120px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #2196f3;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function submitLoanForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var address = document.getElementById("address").value;
+      var annualIncome = document.getElementById("income").value;
+      var employmentStatus = document.getElementById("employment").value;
+      var creditScore = document.getElementById("credit-score").value;
+      var existingCards = document.getElementById("existing-cards").value;
+      var creditLimit = document.getElementById("credit-limit").value;
+
+      if (
+        name === "" ||
+        email === "" ||
+        phone === "" ||
+        address === "" ||
+        annualIncome === "" ||
+        employmentStatus === "" ||
+        creditScore === "" ||
+        existingCards === "" ||
+        creditLimit === ""
+      ) {
+        alert("Please provide all the required information.");
+        return;
+      }
+
+      alert("Card application submitted successfully!");
+      resetCardForm();
+      var loanForm = document.getElementById("loan-form");
+      loanForm.style.display = "none";
+    }
+
+    function resetCardForm() {
+      document.getElementById("loan-form").reset();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Apply for a New Credit Card</h1>
+    <form id="loan-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+      </div>
+      <div class="form-group">
+        <label for="income">Annual Income:</label>
+        <input type="text" id="income" name="income" required>
+      </div>
+      <div class="form-group">
+        <label for="employment">Employment Status:</label>
+        <select id="employment" name="employment" required>
+          <option value="" disabled selected>Select</option>
+          <option value="employed">Employed</option>
+          <option value="self-employed">Self-employed</option>
+          <option value="unemployed">Unemployed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="credit-score">Credit Score:</label>
+        <input type="text" id="credit-score" name="credit-score" required>
+      </div>
+      <div class="form-group">
+        <label for="existing-cards">Existing Cards:</label>
+        <input type="text" id="existing-cards" name="existing-cards" required>
+      </div>
+      <div class="form-group">
+        <label for="credit-limit">Requested Credit Limit:</label>
+        <input type="text" id="credit-limit" name="credit-limit" required>
+      </div>
+      <div class="form-group">
+        <label for="additional-info">Additional Information:</label>
+        <textarea id="additional-info" name="additional-info"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="button" onclick="submitLoanForm()">Submit Application</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
