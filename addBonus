@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Bonus</title>
+    <link rel="stylesheet" href="addBonus.css">
+
+</head>
+
+<body>
+    
+    <h2>Add banker</h2>
+    <label for="name"> Name</label>
+    <br>
+    <input type="text" id="name" name="name">
+    <br>
+    <label for="id"> National ID</label>
+    <br>
+    <input type="text" id="id" name="id" >
+    <br>
+    <label for="phone"> Phone Number</label>
+    <br>
+    <input type="text" id="phone" name="phone" >
+    <br>
+    <input type="text" id="Bonus-Ammount" name="Bonus Ammount" >
+    <br>
+
+    <input id="submit-Bonus" type="submit" value="Submit Bonus" />    
+
+    <button type="button" id="back">Back to Banker Dashboard</button>
+    <script src="banker.js"></script> 
+</body>
+</html>
