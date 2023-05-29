@@ -1,5 +1,14 @@
 * {
   box-sizing: border-box;
+  text-align: center;
+}
+h2 {
+  
+  color: #2196f3;
+}
+
+p, li {
+  color: #ffffff;
 }
 
 body {
