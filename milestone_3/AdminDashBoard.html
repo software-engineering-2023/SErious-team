@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="AdminDashBoard.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+
+    <div class="container">
+
+    <h2>List of reports</h2>
+    <ul id = "reports">
+        <li id = Report-1>Report 1<p>Desc. 1</p><button type="button" class="takeonbutton">Take on</button> <button type="button" class="resolveaction">Reject</button> </li>
+        <li id = Report-2>Report 2<p>Desc. 2</p><button type="button" class="takeonbutton">Take on</button> <button type="button" class="resolveaction">Reject</button> </li>
+        <li id = Report-3>Report 3<p>Desc. 3</p><button type="button" class="takeonbutton">Take on</button> <button type="button" class="resolveaction">Reject</button> </li>
+    </ul>
+</div>
+<div class="container">
+
+    <h2>Taked on reports</h2>
+    
+    <ul id = "acceptedReports">
+        <li id = Report-4>Report 4<p>Desc. 4</p><button type="button" class="resolveaction">Resolved</button> <button type="button" class="resolveaction">Cannot Resolve</button> </li>
+        <li id = Report-5>Report 5<p>Desc. 5</p><button type="button" class="resolveaction">Resolved</button> <button type="button" class="resolveaction">Cannot Resolve</button> </li>
+        <li id = Report-6>Report 6<p>Desc. 6</p><button type="button" class="resolveaction">Resolved</button> <button type="button" class="resolveaction">Cannot Resolve</button> </li>
+    </ul>
+
+    
+</div>
+<div class="container">
+
+<button id="addBanker" type="button"  onclick="window.location.href='addBanker.html'">Add banker</button>
+</div>
+
+    <script type="text/javascript" src="AdminDashBoard.js" ></script>
+</body>
+</html>
