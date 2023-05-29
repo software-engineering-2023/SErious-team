@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Fields Example</title>
+	<style>
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type="text"], textarea {
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+		}
+		input[type="Approve"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+        input[type="Reject"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<label for="Customer ID">Customer ID:</label>
+		<input type="text" id="Customer ID" name="Customer ID">
+
+        <label for="Account Number">Account Number:</label>
+		<input type="text" id="Account Number" name="Customer ID">
+
+		<label for="Amount">Amount:</label>
+		<input type="text" id="Amount" name="Amount">
+
+		<label for="Loan Type">Loan Type:</label>
+		<textarea id="Loan Type" name="Loan Type"></textarea>
+
+		<input type="Approve" value="Approve">
+        <input type="Reject" value="Reject">
+	</form>
+
+	<script>
+const form = document.querySelector('form');
+form.addEventListener('Approve', (event) => {
+    event.preventDefault(); // prevent the form from submitting normally
+
+    const LoanID = document.querySelector('#Loan ID').value;
+    const CustomerID = document.querySelector('#Customer ID').value;
+    const Amount = document.querySelector('#Amount').value;
+    const LoanType = document.querySelector('#Loan Type').value;
+
+    // Do something with the form data here (e.g. send it to a server)
+
+    // Display a pop-up message
+    alert('Loan has been approved and client is notified');
+    function Reject(){
+        alert('Loan has been rejected and client is notified');
+    }
+});	</script>
+
+
+</body>
+</html>
