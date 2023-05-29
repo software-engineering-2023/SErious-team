@@ -100,11 +100,20 @@
     }
 
     function showLoanApproval() {
-      var loanType = "Home Loan";
-      var loanAmount = "$200,000";
-      var message = "Congratulations! Your " + loanType + " application has been approved for an amount of " + loanAmount + ".";
-      createNotification("success", message);
-    }
+  var loanType = "Home Loan";
+  var loanAmount = "$200,000";
+  var message = "Congratulations! Your " + loanType + " application has been approved for an amount of " + loanAmount + ".";
+  createNotification("success", message);
+  createReminder("Tomorrow", "Remember to sign the loan agreement.");
+}
+
+function approveNewCard() {
+  var cardType = "Visa";
+  var cardNumber = "**** **** **** 1234";
+  var message = "✅ Your new " + cardType + " card ending in " + cardNumber + " has been approved. It will be delivered to your registered address soon.";
+  createNotification("success", message);
+  createReminder("Next week", "Don't forget to activate your new card upon arrival.");
+}
 
     function showBankAnnouncement() {
       var announcementTitle = "New Branch Opening";
@@ -113,13 +122,17 @@
       createNotification("info", message);
     }
 
-    function createReminder(time, message) {
-      var reminder = document.createElement("div");
-      reminder.className = "reminder";
-      reminder.innerHTML = "<div class='reminder-time'>" + time + "</div><div class='reminder-message'>" + message + "</div>";
-      document.getElementById("reminders-container").appendChild(reminder);
-      showNotification(time, message); // Show the notification when creating the reminder
-    }
+    var reminderId = 1; // Unique identifier for each reminder
+
+function createReminder(time, message) {
+  var reminder = document.createElement("div");
+  reminder.className = "reminder";
+  reminder.id = "reminder-" + reminderId; // Assign a unique ID to the reminder element
+  reminder.innerHTML = "<div class='reminder-time'>" + time + "</div><div class='reminder-message'>" + message + "</div>";
+  document.getElementById("reminders-container").appendChild(reminder);
+  showNotification(time, message); // Show the notification when creating the reminder
+  reminderId++; // Increment the reminder ID for the next reminder
+}
 
     function setReminder() {
       var timeInput = document.getElementById("time");
@@ -163,12 +176,11 @@
       createNotification("error", message);
     }
 
-    function approveNewCard() {
-      var cardType = "Visa";
-      var cardNumber = "**** **** **** 1234";
-      var message = "✅ Your new " + cardType + " card ending in " + cardNumber + " has been approved. It will be delivered to your registered address soon.";
-      createNotification("success", message);
-    }
+    
+    function receiveReminder(time, message) {
+  createNotification("info", "Reminder: " + time + "\n\n" + message);
+}
+   
  
   </script>
 </head>
