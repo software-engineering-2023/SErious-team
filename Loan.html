@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Fields Example</title>
+    <style>
+
+        body {
+          background-color: #121212;
+          font-family: Arial, sans-serif;
+          margin: 0;
+        }
+        
+        .container {
+          background-color: #1e1e1e;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px #888888;
+          margin: 50px auto;
+          max-width: 500px;
+          padding: 20px;
+        }
+        
+        h1 {
+          text-align: center;
+          color: #2196f3;
+        }
+        
+        form {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        label {
+          margin-bottom: 5px;
+          color: #ffffff;
+        }
+        
+        input[type="text"],
+        
+        textarea {
+          border: 1px solid #2196f3;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          padding: 10px;
+          color: #ffffff;
+          background-color: #121212;
+        }
+        
+        textarea {
+          resize: vertical;
+        }
+        
+        button[type="Approve"],
+        button[type="Reject"],
+        button[type="button"] {
+          background-color: #2196f3;
+          border: none;
+          border-radius: 5px;
+          color: #ffffff;
+          cursor: pointer;
+          font-size: 16px;
+          margin-top: 10px;
+          padding: 10px;
+        }
+        
+        button[type="Approve"]:hover,
+        button[type="Reject"]:hover,
+        button[type="button"]:hover {
+          background-color: #0d47a1;
+        } 
+            </style>
+</head>
+<body>
+	<form>
+		<label for="Loan ID">Loan ID:</label>
+		<input type="text" id="Loan ID" name="Loan ID">
+
+        <label for="Customer ID">Customer ID:</label>
+		<input type="text" id="Customer ID" name="Customer ID">
+
+		<label for="Amount">Amount:</label>
+		<input type="text" id="Amount" name="Amount">
+
+		<label for="Loan Type">Loan Type:</label>
+		<textarea id="Loan Type" name="Loan Type"></textarea>
+
+    <button id = "Button1">Approve</button>
+    <button id = "Button2">Reject</button>
+    <script>
+      document.getElementById("Button1").addEventListener("click", function() {
+			// code to execute when button 1 is clicked
+			alert("The request's approval has been sent to client");
+		});
+
+		document.getElementById("Button2").addEventListener("click", function() {
+			// code to execute when button 2 is clicked
+			alert("The request's rejection has been sent to client");
+		});
+
+
+
+    </script>
+		<!--<input type="Approve" value="Approve">
+        <input type="Reject" value="Reject">
+	</form>
+  <div class = "container">
+    <button type = "Approve" class = "btn">Approve</button>
+    <div class = "popup">
+        <p>The request has been Approved, client has been notified</p>
+  </div>
+  </div>
+  <div class = "container">
+    <button type = "Reject" class = "btn">Reject</button>
+    <div class = "popup">
+        <p>The request has been Rejected, client has been notified</p>
+  </div>
+  </div>
+	
+<button onclick="window.history.back()">Back</button>
+<button onclick="showPopup()">Show Pop-up</button>
+
+<div class="overlay" id="popup-overlay">
+  <div class="modal">
+    <h2>Pop-up Message</h2>
+    <p>This is a pop-up message. Click the button below to close it.</p>
+    <button onclick="hidePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+  function showPopup() {
+    document.getElementById("popup-overlay").classList.add("active");
+  }
+
+  function hidePopup() {
+    document.getElementById("popup-overlay").classList.remove("active");
+  }
+</script>
+-->
+
+</body>
+</html>

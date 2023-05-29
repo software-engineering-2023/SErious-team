@@ -1,0 +1,93 @@
+html file"<!DOCTYPE html>
+<head>
+    <style>
+
+body {
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #888888;
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2196f3;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+input[type="text"],
+
+textarea {
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #121212;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"],
+button[type="button"] {
+  background-color: #2196f3;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #0d47a1;
+} 
+    </style>
+    <meta charset="UTF-8">
+    <title>Report Issue</title>
+    <link rel="stylesheet" href="stylereport.css">
+</head>
+<body>
+<div class="container">
+    <h1>Report Issue</h1>
+    <form id="issue-form" method="POST" >
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email address" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter the subject of the issue" required>
+
+        <label for="description">Issue Description</label>
+        <textarea id="description" name="description" placeholder="Enter a detailed description of the issue" required></textarea>
+
+        <button type="submit">Submit Report</button>
+    </form>
+</div>
+<button onclick="window.history.back()">Back</button>
+
+</body>
+</html>

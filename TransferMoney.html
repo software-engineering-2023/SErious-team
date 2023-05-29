@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Fields Example</title>
+	<style>
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type="text"], textarea {
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+		}
+		input[type="Approve"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+        input[type="Reject"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<label for="Customer ID">Customer ID:</label>
+		<input type="text" id="Customer ID" name="Customer ID">
+
+        <label for="Reciever's Account Number">Reciever's Account Number:</label>
+		<input type="text" id="Reciever's Account Number" name="Reciever's Account Number">
+
+		<label for="Amount">Amount:</label>
+		<input type="text" id="Amount" name="Amount">
+
+        <label for="Issue Date">Issue Date:</label>
+		<textarea id="Issue Date" name="Issue Date"></textarea>
+
+		<label for="Postal Code">Postal Code:</label>
+		<textarea id="Postal Code" name="Postal Code"></textarea>
+
+		<button id = "Button1">Approve</button>
+		<button id = "Button2">Reject</button>
+		<script>
+		  document.getElementById("Button1").addEventListener("click", function() {
+				// code to execute when button 1 is clicked
+				alert("The request's approval has been sent to client");
+			});
+	
+			document.getElementById("Button2").addEventListener("click", function() {
+				// code to execute when button 2 is clicked
+				alert("The request's rejection has been sent to client");
+			});
+			<button onclick="window.history.back()">Back</button>
+	</script>
+
+
+</body>
+</html>

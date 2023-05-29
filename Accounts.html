@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 8px;
+			border: 1px solid black;
+		}
+		th {
+			background-color: #333;
+			color: white;
+		}
+    		.invisible {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<table id = "myTable">
+		<tr>
+			<th>Account Number</th>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Postal Code</th>
+      <th>Balance</th>
+      <th>Latest Transaction</th>
+		</tr>
+		<tr>
+      <td><button class="show-details">123654</button></td>
+			<td class="hidden">Ahmed Hany</td>
+			<td class="hidden">Domestic</td>
+      <td class="hidden">145698</td>
+			<td class="hidden">250,000</td>
+			<td class="hidden">Transfer Money with value $42,000 to Account number 212454</td>
+		</tr>
+		<tr>
+      <td><button class="show-details">123654</button></td>
+			<td class="hidden">Mazen Mostafa</td>
+			<td class="hidden">International</td>
+      <td class="hidden">167943</td>
+			<td class="hidden">100,000</td>
+			<td class="hidden">Cash withdraw $1000 from ATM of ID 21</td>
+		</tr>
+		<tr>
+      <td><button class="show-details">129854</button></td>
+			<td class="hidden">Ahmed Monsef</td>
+			<td class="hidden">Internal</td>
+      <td class="hidden">461379</td>
+			<td class="hidden">50,000</td>
+			<td class="hidden">Deposited money of $1200</td>
+		</tr>
+    <tr>
+      <td><button class="show-details">78945603</button></td>
+			<td class="hidden">Seif Assem</td>
+			<td class="hidden">International</td>
+      <td class="hidden">144898</td>
+			<td class="hidden">10,000</td>
+			<td class="hidden">Paid electicity bills worth $150</td>
+		</tr>
+	</table>
+  <button onclick="window.history.back()">Back</button>
+  <script>
+    const buttons = document.querySelectorAll("#myTable .show-details");
+  
+    buttons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const row = this.parentNode.parentNode;
+        const hiddenCells = row.querySelectorAll(".hidden");
+        hiddenCells.forEach(function(cell) {
+          cell.style.display = "table-cell";
+        });
+      });
+    });
+  </script>
+</body>
+</html>
