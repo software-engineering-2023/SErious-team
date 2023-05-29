@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Banker Dashboard</title>
+  <style>
+    /* CSS styles for the dashboard layout */
+   
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+    }
+    .logo {
+                position: absolute;
+                top: 10px;
+                left: 1px;
+                width: 250px;
+                height: 100px;
+        }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      padding: 20px;
+    }
+
+    .section {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px #888888;
+      
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #2196f3;
+    }
+
+    .section p {
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .section button {
+      display: block;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #0d47a1;
+      color: #fff;
+      cursor: pointer;
+     
+    }
+
+    .section button:hover {
+      background-color: #0d47a1;
+    }
+    .my-button {
+      display: block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .my-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header style="background-color: #007bff; color: #fff; padding: 10px; text-align: center;">
+    <h1>Banker Dashboard</h1>
+  </header>
+
+  <div class="dashboard">
+    <div class="section">
+      <h2>Customer Accounts</h2>
+      <p>View and manage customer accounts</p>
+      <button onclick="window.location.href='Accounts.html';">View Accounts</button>
+    </div>
+
+    <div class="section">
+      <h2>Requests</h2>
+      <p>View and manage Requests</p>
+      <button onclick="window.location.href='Requests.html';">View Transactions</button>
+    </div>
+
+    <div class="section">
+      <h2>Bonuses</h2>
+      <p>Offer Bonuses</p>
+      <button onclick="window.location.href='Loan.html';">View Bonuses</button>
+    </div>
+
+    <div class="section">
+      <h2>Reports</h2>
+      <p>Generate reports and analytics</p>
+      <button onclick="window.location.href='Reports.html';">Generate Reports</button>
+    </div>
+  </div>
+</body>
+</html>
